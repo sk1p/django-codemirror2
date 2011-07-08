@@ -1,0 +1,4 @@
+*.swp
+*.pyc
+examples/test.db
+examples/static_dest/*

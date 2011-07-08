@@ -1,0 +1,6 @@
+USAGE:
+
+1.  ./manage.py syncdb
+2.  ./manage.py collectstatic
+3.  ./manage.py runserver
+4.  Go to http://localhost:8000/admin/testapp/testhtml/add/
