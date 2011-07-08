@@ -4,3 +4,4 @@ examples/test.db
 examples/static_dest/*
 MANIFEST
 dist
+build

@@ -1,8 +1,22 @@
 from distutils.core import setup
+from distutils.command.install import INSTALL_SCHEMES
 import os
 
+BASE_DIR = os.path.dirname(__file__)
+
 def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+    return open(os.path.join(BASE_DIR, fname)).read()
+
+for scheme in INSTALL_SCHEMES.values():
+    scheme['data'] = scheme['purelib']
+
+data_files = []
+for dirpath, dirnames, filenames in os.walk(os.path.join(BASE_DIR, "codemirror2", "static")):
+    # Ignore dirnames that start with '.'
+    for i, dirname in enumerate(dirnames):
+        if dirname.startswith('.'): del dirnames[i]
+    if filenames:
+        data_files.append([dirpath, [os.path.join(dirpath, f) for f in filenames]])
 
 README = read("README.rst")
 
@@ -15,5 +29,6 @@ setup(name="django-codemirror2",
     long_description=README,
     packages=["codemirror2"],
     package_data = {'codemirror2': [os.path.join("templates", "codemirror2", "*")]},
+    data_files=data_files,
     include_package_data=True,
 )
