@@ -15,4 +15,5 @@ setup(name="django-codemirror2",
     long_description=README,
     packages=["codemirror2"],
     package_data = {'codemirror2': [os.path.join("templates", "codemirror2", "*")]},
+    include_package_data=True,
 )
