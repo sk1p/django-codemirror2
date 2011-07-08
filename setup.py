@@ -7,7 +7,7 @@ def read(fname):
 README = read("README.rst")
 
 setup(name="django-codemirror2",
-    version="0.0.2-dev",
+    version="0.0.2",
     author_email="alex@gc-web.de",
     author="Alexander Clausen",
     description="Django widgets for replacing textareas with CodeMirror2, an in-browser code editor",
