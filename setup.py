@@ -6,7 +6,7 @@ def read(fname):
 
 README = read("README.rst")
 
-setup(name="codemirror2",
+setup(name="django-codemirror2",
     version="0.0.1",
     author_email="alex@gc-web.de",
     author="Alexander Clausen",
