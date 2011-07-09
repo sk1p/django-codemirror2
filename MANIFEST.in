@@ -1,0 +1,2 @@
+recursive-include codemirror2/static/ *
+prune codemirror2/static/codemirror2/.git
