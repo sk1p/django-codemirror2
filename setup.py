@@ -10,19 +10,12 @@ README = read("README.rst")
 
 setup(
     name="django-codemirror2",
-    version="0.0.5",
+    version="0.0.6",
     author_email="alex@gc-web.de",
     author="Alexander Clausen",
     url="https://github.com/sk1p/django-codemirror2",
     description="Django widgets for replacing textareas with CodeMirror2, an in-browser code editor",
     long_description=README,
-    setup_requires = [
-        "setuptools_git>=0.3.4",
-    ],
-
-    packages=find_packages(exclude=("examples",)),
-    include_package_data=True,
-    zip_safe=False,
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
@@ -33,4 +26,8 @@ setup(
         'Programming Language :: JavaScript',
         'Topic :: Text Editors',
     ],
+
+    packages=find_packages(exclude=("examples",)),
+    zip_safe=False,
+
 )
