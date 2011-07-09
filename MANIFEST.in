@@ -1,3 +1,0 @@
-include README.rst LICENSE
-recursive-include codemirror2/static *
-recursive-include examples *
