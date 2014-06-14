@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 import os
 
 BASE_DIR = os.path.dirname(__file__)
@@ -30,5 +30,4 @@ setup(
     ],
     include_package_data=True,
     packages=["codemirror2"],
-    zip_safe=False,
 )
