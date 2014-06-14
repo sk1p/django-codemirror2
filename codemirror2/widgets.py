@@ -9,12 +9,14 @@ from django.contrib.admin import widgets as admin_widgets
 STATIC_URL = getattr(settings, "STATIC_URL", settings.MEDIA_URL)
 STATIC_URL = STATIC_URL.rstrip('/')
 
+
 class CodeMirrorEditor(widgets.Textarea):
-    def __init__(self, modes=None, themes=None, options=None, script_template="codemirror2/codemirror_script.html", *args, **kwargs):
+    def __init__(self, modes=None, themes=None, options=None,
+                 script_template="codemirror2/codemirror_script.html", *args, **kwargs):
         """
         options: will be json-encoded and passed to ``CodeMirror.fromTextArea``
 
-        modes: list of mode files to load, example: ["xml", "css", "python"]. 
+        modes: list of mode files to load, example: ["xml", "css", "python"].
 
         themes: list of themes to load, example: ["default", "neat", "elegant", "night"]
         """
