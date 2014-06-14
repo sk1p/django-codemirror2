@@ -1,4 +1,5 @@
 *.swp
+*.egg-info
 *.pyc
 examples/test.db
 examples/static_dest/*
