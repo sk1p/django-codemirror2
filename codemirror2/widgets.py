@@ -3,7 +3,8 @@ from django.forms import widgets
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
-from django.utils import simplejson
+#from django.utils import simplejson
+import json
 from django.contrib.admin import widgets as admin_widgets
 
 STATIC_URL = getattr(settings, "STATIC_URL", settings.MEDIA_URL)
@@ -44,7 +45,7 @@ class CodeMirrorEditor(widgets.Textarea):
         rendered = super(CodeMirrorEditor, self).render(name, value, attrs, **kwargs)
         context = {
             'name': name,
-            'options': simplejson.dumps(self.options),
+            'options': json.dumps(self.options),
         }
         return rendered + mark_safe(
             render_to_string(self.script_template, context)
