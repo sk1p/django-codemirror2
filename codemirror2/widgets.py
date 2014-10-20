@@ -3,7 +3,6 @@ from django.forms import widgets
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
-#from django.utils import simplejson
 import json
 from django.contrib.admin import widgets as admin_widgets
 
