@@ -11,7 +11,7 @@ README = read("README.rst")
 
 setup(
     name="django-codemirror2",
-    version="0.1",
+    version="0.1.1",
     author_email="alex@gc-web.de",
     author="Alexander Clausen",
     url="https://github.com/sk1p/django-codemirror2",
