@@ -3,11 +3,14 @@ Django widgets for replacing textareas with CodeMirror2, an in-browser code edit
 Installing
 ==========
 
-1. pip install django-codemirror2
+1. ``pip install django-codemirror2``
 2. Add ``codemirror2`` to INSTALLED_APPS
 3. Collect static files: ``python manage.py collectstatic``
 
 If you just want to see it in action, see the almost-ready-to-run project in ``examples``.
+
+To use django-codemirror2 directly from git, you need to initialize
+the Codemirror2 submodule by running ``git submodule init && git submodule update``.
 
 Usage
 =====
