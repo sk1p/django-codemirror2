@@ -53,6 +53,7 @@ class CodeMirrorEditor(widgets.Textarea):
     @property
     def media(self):
         js_files = ["codemirror2/lib/codemirror.js"]
+        js_files += ["codemirror2/addon/mode/overlay.js"]
         js_files += [("codemirror2/mode/%s/%s.js" % (mode, mode)) for mode in self.modes]
         css_files = ["codemirror2/lib/codemirror.css"]
         css_files += [("codemirror2/theme/%s.css" % theme) for theme in self.themes]
