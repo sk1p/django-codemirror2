@@ -19,4 +19,4 @@ matrix:
 install:
   - pip install tox 
 script:
-  - tox
+  - tox -e $TOX_ENV
