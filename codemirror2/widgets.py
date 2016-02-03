@@ -4,10 +4,8 @@ from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 import json
+import copy
 from django.contrib.admin import widgets as admin_widgets
-
-STATIC_URL = getattr(settings, "STATIC_URL", settings.MEDIA_URL)
-STATIC_URL = STATIC_URL.rstrip('/')
 
 
 class CodeMirrorEditor(widgets.Textarea):
@@ -21,7 +19,7 @@ class CodeMirrorEditor(widgets.Textarea):
         themes: list of themes to load, example: ["default", "neat", "elegant", "night"]
         """
         super(CodeMirrorEditor, self).__init__(*args, **kwargs)
-        def_options = getattr(settings, "CODEMIRROR_DEFAULT_OPTIONS", {})
+        def_options = copy.deepcopy(getattr(settings, "CODEMIRROR_DEFAULT_OPTIONS", {}))
         if options is not None:
             def_options.update(options)
         self.options = def_options
