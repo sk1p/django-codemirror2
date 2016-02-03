@@ -1,6 +1,9 @@
 Django widgets for replacing textareas with CodeMirror2, an in-browser code editor.
 Tested on Django 1.6+, support Python 2.7 and Python 3.4+.
 
+.. image:: https://travis-ci.org/sk1p/django-codemirror2.svg?branch=master
+    :target: https://travis-ci.org/sk1p/django-codemirror2
+
 Installing
 ==========
 
