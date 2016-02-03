@@ -6,3 +6,10 @@ examples/static_dest/*
 MANIFEST
 dist
 build
+junit.xml
+coverage.xml
+htmlcov
+.cache
+.coverage
+.tox
+pep8.txt
