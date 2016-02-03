@@ -1,4 +1,4 @@
-Django widgets for replacing textareas with CodeMirror2, an in-browser code editor.
+Django widgets for replacing textareas with CodeMirror, an in-browser code editor.
 Tested on Django 1.6+, support Python 2.7 and Python 3.4+.
 
 .. image:: https://travis-ci.org/sk1p/django-codemirror2.svg?branch=master
@@ -14,7 +14,7 @@ Installing
 If you just want to see it in action, see the almost-ready-to-run project in ``examples``.
 
 To use django-codemirror2 directly from git, you need to initialize
-the Codemirror2 submodule by running ``git submodule init && git submodule update``.
+the Codemirror submodule by running ``git submodule init && git submodule update``.
 
 Usage
 =====

@@ -27,7 +27,7 @@ class CodeMirrorEditor(widgets.Textarea):
             if 'mode' in self.options:
                 modes = [self.options['mode']]
             else:
-                modes = ["clike", "diff", "htmlmixed", "lua", "plsql", "rst", "smalltalk", "xml",
+                modes = ["clike", "diff", "htmlmixed", "lua", "sql", "rst", "smalltalk", "xml",
                         "css", "haskell", "javascript", "php", "python", "scheme", "stex", "yaml"]
         self.modes = modes
         if themes is None:
@@ -58,10 +58,10 @@ class CodeMirrorEditor(widgets.Textarea):
                       if theme != "default"]  # default theme is included in codemirror.css
         # some modes have extra css files, too:
         # TODO: autodetect
-        if "rst" in self.modes:
-            css_files.append("codemirror2/mode/rst/rst.css")
-        if "diff" in self.modes:
-            css_files.append("codemirror2/mode/diff/diff.css")
+        need_css = ["tiki", "tiddlywiki"]
+        for mode in need_css:
+            if mode in self.modes:
+                css_files.append("codemirror2/mode/%s/%s.css" % (mode, mode))
         return widgets.Media(js=js_files, css={'screen': css_files})
 
 

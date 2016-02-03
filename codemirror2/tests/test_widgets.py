@@ -1,3 +1,5 @@
+from itertools import chain
+from django.contrib.staticfiles.finders import find
 import pytest
 from codemirror2.widgets import CodeMirrorEditor
 
@@ -71,16 +73,23 @@ def test_media_w_mode():
             "codemirror2/lib/codemirror.css"
         ]
     }
+    for f in chain(js, css["screen"]):
+        assert find(f)
 
 
 def test_mode_extra_css():
-    w = CodeMirrorEditor(options={"mode": "rst"})
+    w = CodeMirrorEditor(options={"mode": "tiki"})
     js, css = w.media._js, w.media._css
-    assert "codemirror2/mode/rst/rst.css" in css["screen"]
-    w = CodeMirrorEditor(options={"mode": "diff"})
-    js, css = w.media._js, w.media._css
-    assert "codemirror2/mode/diff/diff.css" in css["screen"]
+    assert "codemirror2/mode/tiki/tiki.css" in css["screen"]
+    for f in chain(js, css["screen"]):
+        assert find(f)
 
 
-def test_need_staticfiles(settings):
-    settings.STATIC_URL = None
+def test_staticfiles_exist():
+    """
+    in default configuration (with "all" modes), the static files should exist
+    """
+    w = CodeMirrorEditor()
+    js, css = w.media._js, w.media._css
+    for f in chain(js, css["screen"]):
+        assert find(f)
