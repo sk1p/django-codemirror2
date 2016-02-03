@@ -4,17 +4,17 @@ Tested on Django 1.6+, support Python 2.7 and Python 3.4+.
 .. image:: https://travis-ci.org/sk1p/django-codemirror2.svg?branch=master
     :target: https://travis-ci.org/sk1p/django-codemirror2
 
+
 Installing
 ==========
 
-1. ``pip install django-codemirror2``
+1. run ``pip install django-codemirror2``
 2. Add ``codemirror2`` to INSTALLED_APPS
 3. Collect static files: ``python manage.py collectstatic``
 
-If you just want to see it in action, see the almost-ready-to-run project in ``examples``.
-
 To use django-codemirror2 directly from git, you need to initialize
 the Codemirror submodule by running ``git submodule init && git submodule update``.
+
 
 Usage
 =====
@@ -45,3 +45,13 @@ If you want to customize the Javascript used to initialize the CodeMirror editor
                 script_template='some/template.html'))
 
 You can base your script template on the included template ``codemirror_script.html``.
+
+
+Example app
+===========
+
+There is a simple example app included. To run it:
+
+1. run ``tox -e devenv``
+2. run ``./run_example_server.sh``
+3. visit http://localhost:8000/admin/testapp/ in your browser.

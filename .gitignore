@@ -13,3 +13,5 @@ htmlcov
 .coverage
 .tox
 pep8.txt
+*.sqlite3
+devenv

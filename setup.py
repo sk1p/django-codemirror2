@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="django-codemirror2",
-    version="0.2.dev1",
+    version="0.2",
     author_email="alex@gc-web.de",
     author="Alexander Clausen",
     url="https://github.com/sk1p/django-codemirror2",
