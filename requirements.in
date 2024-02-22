@@ -3,5 +3,3 @@ six
 coverage
 pytest-cov
 pytest-django
-pip-tools
-flake8
