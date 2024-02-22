@@ -1,4 +1,4 @@
 [submodule "codemirror2/static/codemirror2"]
-    path = codemirror2/static/codemirror2
+	path = src/codemirror2/static/codemirror2
     url = https://github.com/marijnh/CodeMirror.git
     ignore = dirty

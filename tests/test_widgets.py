@@ -33,8 +33,7 @@ def test_mode_populated_w_modelist(w):
 
 def test_pass_modes():
     modes = ["python", "css", "xml", "javascript", "htmlmixed"]
-    w = CodeMirrorEditor(options={"mode": "python"},
-                         modes=modes)
+    w = CodeMirrorEditor(options={"mode": "python"}, modes=modes)
     assert w.modes == modes
     assert w.options == {"mode": "python"}
 
@@ -68,11 +67,7 @@ def test_media_w_mode():
         "codemirror2/addon/mode/overlay.js",
         "codemirror2/mode/python/python.js",
     ]
-    assert css == {
-        "screen": [
-            "codemirror2/lib/codemirror.css"
-        ]
-    }
+    assert css == {"screen": ["codemirror2/lib/codemirror.css"]}
     for f in chain(js, css["screen"]):
         assert find(f)
 
