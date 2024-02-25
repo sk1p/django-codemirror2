@@ -7,7 +7,7 @@ packages = ["src/codemirror2"]
 
 [project]
 version = "0.2.1.dev1"
-name = "django_codemirror2"
+name = "django-codemirror2"
 dependencies = [
     "django<6",
 ]
