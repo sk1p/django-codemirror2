@@ -41,7 +41,7 @@ jobs:
           python_version='${{ matrix.python_version }}'
           tox -e "py${python_version//./}-django${{ matrix.django_version }}"
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5.4.2
+        uses: codecov/codecov-action@v7.1.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: sk1p/django-codemirror2 
