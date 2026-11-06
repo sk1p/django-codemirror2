@@ -7,3 +7,15 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+  # Refresh requirements.txt from requirements.in using Dependabot's pip-compile support.
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    versioning-strategy: "lockfile-only"
+    allow:
+      - dependency-type: "all"
+    groups:
+      python-dependencies:
+        patterns:
+          - "*"
