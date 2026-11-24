@@ -1,6 +1,6 @@
 from django.contrib import admin
 from codemirror2.widgets import CodeMirrorEditor
-from testapp.models import TestCss, TestHTML
+from testapp.models import TestCss, TestHTML, TestParent, TestChild
 
 
 class TestCssAdmin(admin.ModelAdmin):
@@ -22,5 +22,22 @@ class TestHTMLAdmin(admin.ModelAdmin):
         return super().formfield_for_dbfield(db_field, **kwargs)
 
 
+class ChildInline(admin.StackedInline):
+    model = TestChild
+
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        if db_field.attname == "html":
+            kwargs["widget"] = CodeMirrorEditor(
+                options={"mode": "htmlmixed", "lineNumbers": True},
+                modes=["css", "xml", "javascript", "htmlmixed"],
+            )
+        return super().formfield_for_dbfield(db_field, **kwargs)
+
+
+class TestParentAdmin(admin.ModelAdmin):
+    inlines = [ChildInline]
+
+
+admin.site.register(TestParent, TestParentAdmin)
 admin.site.register(TestCss, TestCssAdmin)
 admin.site.register(TestHTML, TestHTMLAdmin)
